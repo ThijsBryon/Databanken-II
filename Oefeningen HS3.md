@@ -2,13 +2,9 @@
 ```sql
 -- Oefening 1 (klopt nog niet)
 
-select o.OrderID, p.ProductName  
-from Orders o JOIN OrdersDetail r RIGHT JOIN Product p
-ON  o.OrderID = r.OrderID
-ON r.ProductID=p.ProductID
-EXCEPT 
-SELECT productid FROM ordersdetail
-
+select ProductName, ProductID
+FROM Product
+WHERE ProductID NOT IN (SELECT ProductID FROM Purchases)
 
 
 -- Oefening 4
@@ -37,5 +33,12 @@ WHERE (
 	WHERE m.PLAYERNO = p.PLAYERNO
 	)
 
--- Oefening 
+
+```
+# oefening common table expression
+
+```sql
+-- Oefening 1 dia 90
+
+
 ```
